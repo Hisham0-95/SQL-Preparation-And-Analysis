@@ -1,0 +1,12 @@
+select
+datetrunc(month, order_date) as order_year,
+sum(sales_amount) as total_sales,
+count(distinct customer_key) as total_customer, 
+sum(quantity) as total_quantity,
+rank() over(order by sum(sales_amount) desc) as ranking
+from gold.fact_sales
+where order_date is not null
+group by datetrunc(month, order_date)
+order by datetrunc(month, order_date)
+
+# -- 2013 was signifcantly higher sales but it didnt last long as it dropped in jan 2014
