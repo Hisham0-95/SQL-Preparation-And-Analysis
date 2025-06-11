@@ -9,4 +9,4 @@ where order_date is not null
 group by datetrunc(month, order_date)
 order by datetrunc(month, order_date)
 
-__--2013 was signifcantly higher sales but it didnt last long as it dropped in jan 2014__
+**--2013 was signifcantly higher sales but it didnt last long as it dropped in jan 2014**
