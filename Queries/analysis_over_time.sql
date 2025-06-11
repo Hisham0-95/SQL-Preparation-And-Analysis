@@ -28,8 +28,9 @@ group by datetrunc(YEAR, order_date)
 ) t 
 
 /* total sales increased when the average price decreased
-	so I suggest focusing on developing pricing strategies */
+so I suggest focusing on developing pricing strategies */
 
+	
 with yearly_product_sales as (
 select 
 year(f.order_date) as order_year,
@@ -60,6 +61,7 @@ order by product_name, order_year
 /* need to focus on products that are below average and decreasing over 2 years
 to decide if it needs better product strategy or marketing campaign or stop selling it */
 
+	
 with category_sales as (
 select 
 category,
@@ -77,6 +79,7 @@ from category_sales
 
 -- bikes are 96.64% of total sales
 
+	
 with customer_spending as (
 select
 c.customer_key,
@@ -89,7 +92,6 @@ left join gold.dim_customers as c
 on f.customer_key = c.customer_key
 group by c.customer_key
 )
-
 
 select 
 customer_type,
