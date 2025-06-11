@@ -9,7 +9,7 @@ where order_date is not null
 group by datetrunc(month, order_date)
 order by datetrunc(month, order_date)
 
-> **💡 2013 had significantly higher sales but dropped in Jan 2014**
+**💡 2013 had significantly higher sales but dropped in Jan 2014**
 
 
 select
